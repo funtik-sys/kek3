@@ -1,0 +1,31 @@
+$mysql = mysqli_connect('localhost', 'root', '', 'News');
+$queryaboba1 = mysqli_query($mysql, "SELECT * FROM sitemap");
+$id = 0;
+function her(string $id, $mysql){ 
+            xyi:
+            $queryaboba = mysqli_query( $mysql, "SELECT * FROM NewsTable WHERE Dependence = '$id'");
+            while($fetish_abcoc1 = $queryaboba->fetch_assoc()){
+                    ?>
+                <tr>
+                    <td>   <? echo $fetish_abcoc1['Name']." "; ?></td>
+                    <td>   <? echo $fetish_abcoc1['Date']; ?></td>
+                </tr>
+                <tr><td colspan="2" style="height: 10px;"></td></tr>
+                    <?
+
+    }
+ 
+}
+
+
+
+
+function p1sun($id, $mysql){
+    her($id, $mysql);
+    $queryaboba2 = mysqli_query( $mysql, "SELECT * FROM sitemap WHERE Dependence	= '$id'");
+    while($fetish_abcoc2 = $queryaboba2->fetch_assoc()){
+            her($fetish_abcoc2['id'], $mysql);
+            p1sun($fetish_abcoc2['id'], $mysql);
+        } 
+}
+while($fetish_abcoc1 =  $queryaboba1->fetch_assoc()){p1sun($fetish_abcoc1['id'], $mysql);}
